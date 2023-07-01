@@ -1,89 +1,92 @@
 {
-	"name": "@redwerks/generator-cosmos",
-	"type": "module",
-	"version": "0.0.0",
-	"description": "Scaffold a project following Redwerks Cosmos conventions",
-	"homepage": "https://github.com/redwerks/generator-cosmos",
-	"author": {
-		"name": "Daniel Friesen",
-		"email": "d@danf.ca",
-		"url": "https://danf.ca"
-	},
-	"contributors": [
-		{
-			"name": "Redwerks",
-			"url": "https://redwerks.org"
-		}
-	],
-	"files": [
-		"generators"
-	],
-	"main": "generators/index.js",
-	"keywords": [
-		"redwerks",
-		"redwerks-cosmos",
-		"yeoman-generator"
-	],
-	"devDependencies": {
-		"@types/mocha": "^10.0.1",
-		"@types/node": "^20.3.3",
-		"@types/yeoman-assert": "^3.1.1",
-		"@types/yeoman-generator": "^5.2.11",
-		"@types/yosay": "^2.0.1",
-		"@typescript-eslint/eslint-plugin": "^5.60.1",
-		"@typescript-eslint/parser": "^5.60.1",
-		"copyfiles": "^2.4.1",
-		"eslint": "^8.44.0",
-		"eslint-config-prettier": "^8.8.0",
-		"eslint-plugin-mocha": "^10.1.0",
-		"eslint-plugin-prettier": "^4.2.1",
-		"husky": "^8.0.3",
-		"lint-staged": "^13.2.3",
-		"mocha": "^10.2.0",
-		"onchange": "^7.1.0",
-		"prettier": "^2.8.8",
-		"rimraf": "^5.0.1",
-		"ts-node": "^10.9.1",
-		"tsc-watch": "^6.0.4",
-		"typescript": "^5.1.6",
-		"yeoman-assert": "^3.1.1",
-		"yeoman-test": "^7.4.0"
-	},
-	"engines": {
-		"npm": ">= 9.0.0",
-		"node": ">= 18.0.0"
-	},
-	"dependencies": {
-		"chalk": "^5.3.0",
-		"yeoman-generator": "^5.9.0",
-		"yosay": "^2.0.2"
-	},
-	"lint-staged": {
-		"*.js": [
-			"eslint --fix",
-			"git add"
-		],
-		"*.json": [
-			"prettier --write",
-			"git add"
-		]
-	},
-	"husky": {
-		"hooks": {
-			"pre-commit": "lint-staged"
-		}
-	},
-	"scripts": {
-		"build": "tsc && npm run copydeps && npm run lint",
-		"copydeps": "copyfiles --up 1 'src/*/templates/**' generators",
-		"clean": "rimraf -rf ./generators",
-		"watch": "npm run watch-tsc --silent & npm run watch-deps --silent",
-		"watch-deps": "onchange 'src/*/templates/**' --initial -- npm run copydeps --silent",
-		"watch-tsc": "tsc-watch --onSuccess 'npm run lint --silent'",
-		"test": "mocha",
-		"lint": "eslint --cache --ext .js,.ts .",
-		"format": "prettier --write ."
-	},
-	"repository": "redwerks/generator-cosmos",
-	"license": "ISC"
+  "name": "@redwerks/generator-cosmos",
+  "type": "module",
+  "version": "0.0.0",
+  "description": "Scaffold a project following Redwerks Cosmos conventions",
+  "homepage": "https://github.com/redwerks/generator-cosmos",
+  "author": {
+    "name": "Daniel Friesen",
+    "email": "d@danf.ca",
+    "url": "https://danf.ca"
+  },
+  "contributors": [
+    {
+      "name": "Redwerks",
+      "url": "https://redwerks.org"
+    }
+  ],
+  "files": [
+    "generators"
+  ],
+  "main": "generators/index.js",
+  "keywords": [
+    "redwerks",
+    "redwerks-cosmos",
+    "yeoman-generator"
+  ],
+  "devDependencies": {
+    "@types/invariant": "^2.2.35",
+    "@types/mocha": "^10.0.1",
+    "@types/node": "^20.3.3",
+    "@types/yeoman-assert": "^3.1.1",
+    "@types/yeoman-generator": "^5.2.11",
+    "@types/yosay": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^5.60.1",
+    "@typescript-eslint/parser": "^5.60.1",
+    "copyfiles": "^2.4.1",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-plugin-mocha": "^10.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.3",
+    "mocha": "^10.2.0",
+    "onchange": "^7.1.0",
+    "rimraf": "^5.0.1",
+    "ts-node": "^10.9.1",
+    "tsc-watch": "^6.0.4",
+    "typescript": "^5.1.6",
+    "yeoman-assert": "^3.1.1",
+    "yeoman-test": "^7.4.0",
+    "prettier": "*"
+  },
+  "engines": {
+    "npm": ">= 9.0.0",
+    "node": ">= 18.0.0"
+  },
+  "dependencies": {
+    "chalk": "^5.3.0",
+    "ejs-lint": "^2.0.0",
+    "invariant": "^2.2.4",
+    "yeoman-generator": "^5.9.0",
+    "yosay": "^2.0.2"
+  },
+  "lint-staged": {
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ],
+    "*.json": [
+      "prettier --write",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "scripts": {
+    "build": "tsc && npm run copydeps && npm run lint",
+    "copydeps": "copyfiles --up 1 'src/*/templates/**' generators",
+    "clean": "rimraf -rf ./generators",
+    "watch": "npm run watch-tsc --silent & npm run watch-deps --silent",
+    "watch-deps": "onchange 'src/*/templates/**' --initial -- npm run copydeps --silent",
+    "watch-tsc": "tsc-watch --onSuccess 'npm run lint --silent'",
+    "test": "mocha",
+    "lint": "eslint --cache --ext .js,.ts . && ejslint 'src/**/templates/*.ejs'",
+    "format": "prettier --write ."
+  },
+  "repository": "redwerks/generator-cosmos",
+  "license": "ISC"
 }

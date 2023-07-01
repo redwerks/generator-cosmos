@@ -1,13 +1,12 @@
 import chalk from 'chalk';
 import Generator from 'yeoman-generator';
 import yosay from 'yosay';
-import fs from 'fs';
 
 export interface Answers {
 	someAnswer: boolean;
 }
 
-export default class RedwerksCosmosGenerator extends Generator {
+export default class RedwerksCosmosAppGenerator extends Generator {
 	answers: Answers | undefined;
 
 	async prompting() {
@@ -33,7 +32,6 @@ export default class RedwerksCosmosGenerator extends Generator {
 	}
 
 	writing() {
-		console.log(fs.readdirSync(this.templatePath('..')));
 		this.fs.copy(
 			this.templatePath('dummyfile.txt'),
 			this.destinationPath('dummyfile.txt')

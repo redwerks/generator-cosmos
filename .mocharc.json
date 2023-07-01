@@ -1,5 +1,5 @@
 {
-	"spec": ["src/**/*.spec.ts"],
-	"extension": ["js", "cjs", "mjs", "ts"],
-	"node-option": ["loader=ts-node/esm"]
+  "spec": ["src/**/*.spec.ts"],
+  "extension": ["js", "cjs", "mjs", "ts"],
+  "node-option": ["loader=ts-node/esm"]
 }
