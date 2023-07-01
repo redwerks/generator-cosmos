@@ -3,7 +3,7 @@
 	"type": "module",
 	"version": "0.0.0",
 	"description": "Scaffold a project following Redwerks Cosmos conventions",
-	"homepage": "",
+	"homepage": "https://github.com/redwerks/generator-cosmos",
 	"author": {
 		"name": "Daniel Friesen",
 		"email": "d@danf.ca",
