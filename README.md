@@ -4,7 +4,7 @@
 
 ## Installation
 
-First, install [Yeoman](http://yeoman.io) and @redwerks/generator-cosmos using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
+First, install [Yeoman](http://yeoman.io) and `@redwerks/generator-cosmos` using [npm](https://www.npmjs.com/) (we assume you have pre-installed [node.js](https://nodejs.org/)).
 
 ```bash
 npm install -g yo @redwerks/generator-cosmos
@@ -15,6 +15,25 @@ Then generate your new project:
 ```bash
 yo @redwerks/cosmos
 ```
+
+## What does Redwerks Cosmos scaffold?
+
+- [x] Prettier & EditorConfig
+- [ ] ESLint
+- [ ] Vite
+- [ ] GitHub Actions CI
+  - [ ] Linter CI
+  - [ ] Eslint CI Integration
+  - [ ] Unit Test Integration
+  - [ ] Browser UI test (e2e) integration?
+  - [ ] Prettier generation
+  - [ ] Other code generation actions?
+- [ ] Remix and Next.js?
+- [ ] Test suites?
+- [ ] Tailwind CSS
+- [ ] VSCode Snippets from our library
+- [ ] husky / lint-staged / run-if-changed
+- [ ] ... and more ... ?
 
 ## Getting To Know Yeoman
 
